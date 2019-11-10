@@ -19,3 +19,4 @@ Route::get('/login', function () {
 });
 Route::post('/login', "Controller@login");
 Route::get('/index', "Controller@index");
+Route::post('/logout', "Controller@logout");

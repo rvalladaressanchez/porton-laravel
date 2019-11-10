@@ -1,5 +1,6 @@
 @extends('layouts/layout') @section('contenido')
 <h1>{{$titulo}}</h1>
+<h3>Usuarios</h3>
 <table class="table table-hover">
     <thead>
         <tr>
