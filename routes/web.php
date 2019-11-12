@@ -20,3 +20,11 @@ Route::get('/login', function () {
 Route::post('/login', "Controller@login");
 Route::get('/index', "Controller@index");
 Route::post('/logout', "Controller@logout");
+
+//Usuario//
+Route::get('/usuarios','ControladorUsuario@index');
+Route::get('/usuarios/{id}/edit','ControladorUsuario@edit')->where('id', '[0-9]+');
+Route::get('/usuarios/nuevo','ControladorUsuario@create');
+Route::post('/usuarios/{id}/edit','ControladorUsuario@update')->where('id', '[0-9]+');
+Route::post('/usuarios/{id}/destroy','ControladorUsuario@destroy');
+Route::post('/usuarios/store','ControladorUsuario@store');
