@@ -10,7 +10,7 @@
         </tr>
         <tr>
             <th>Codigo</th>
-            <td><input name="txtCodigo" type="text" class="form-control"/></td>
+            <td><input name="txtCodigo" maxlength="5" type="text" class="form-control"/></td>
         </tr>
         <tr>
             <th>Activo</th>
