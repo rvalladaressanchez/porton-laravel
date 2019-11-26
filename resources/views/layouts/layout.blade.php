@@ -15,7 +15,7 @@
         <h1>Porton Quito 647 - RvS</h1>
         <form action="{{url('logout')}}" method="POST">
             @csrf
-            <input class="btn btn-link" type='submit' value='Logout'>
+            <input style="float:right" class="btn btn-danger btn-lg" type='submit' value='Logout'>
         </form>
         <hr>
     </div>

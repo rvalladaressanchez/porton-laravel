@@ -1,6 +1,7 @@
 @extends('layouts/layout')
 @section('contenido')
 <h2>{{$titulo}}</h2>
+<a class="btn btn-link" href="/registros">Volver</a>
 <table class="table table-hover">
     <tr>
         <th>Id</th>

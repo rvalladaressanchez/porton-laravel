@@ -1,5 +1,5 @@
 @extends('layouts/layout') @section('contenido')
 <h1>{{$titulo}}</h1>
-<h3>Usuarios</h3>
-<a href="/usuarios">Editar usuario</a>
+<a class="btn btn-primary btn-block btn-lg" href="/usuarios">Usuarios</a>
+<a class="btn btn-primary btn-block btn-lg" href="/registros">Registros</a>
 @endsection
