@@ -14,7 +14,7 @@
     <tbody>
         @foreach($lista as $registro)
         <tr>
-            <td>{{$registro->id}}</td>
+            <td><a href="/registros/{{$registro->id}}">{{$registro->id}}</a></td>
             <td>{{$registro->codigo}}</td>
             <td>{{$registro->nombre}}</td>
             <td>{{$registro->tipo}}</td>
