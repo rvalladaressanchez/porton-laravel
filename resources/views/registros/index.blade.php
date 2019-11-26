@@ -1,6 +1,7 @@
 @extends('layouts/layout') @section('contenido')
 <h3>Registros</h3>
 <a class="btn btn-link" href="/index">Volver</a>
+<a class="btn btn-success" href="/registros/grafico">Grafico</a>
 <table class="table table-bordered">
     <thead>
         <tr>

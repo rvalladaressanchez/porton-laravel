@@ -32,3 +32,4 @@ Route::post('/usuarios/store','ControladorUsuario@store');
 //Registros//
 Route::get('/registros','ControladorRegistro@index');
 Route::get('/registros/{id}','ControladorRegistro@show')->where('id', '[0-9]+');
+Route::get('/registros/grafico','ControladorRegistro@grafico');
