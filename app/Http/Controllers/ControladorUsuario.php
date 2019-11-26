@@ -73,7 +73,8 @@ class ControladorUsuario extends Controller
     {
         return View('usuarios/edit')
         ->with('titulo', 'Editar')
-        ->with('usuario', $this->show($id));
+        ->with('usuario', $this->show($id))
+        ->with('lista', DB::table('registros')->where('nombre', '=', $this->show($id)->nombre)->get());
     }
 
     /**
