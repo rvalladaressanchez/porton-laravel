@@ -17,7 +17,7 @@ class Controller extends BaseController
         $password=$_POST['txtPass'];
         if ($login == '187816203' && $password == 'rodrigo6747') {
             session()->put('usuario', $login);
-            return redirect("/usuarios");
+            return redirect("/index");
         }
         return redirect("/login");
     }
