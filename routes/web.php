@@ -28,3 +28,6 @@ Route::get('/usuarios/nuevo','ControladorUsuario@create');
 Route::post('/usuarios/{id}/edit','ControladorUsuario@update')->where('id', '[0-9]+');
 Route::post('/usuarios/{id}/destroy','ControladorUsuario@destroy');
 Route::post('/usuarios/store','ControladorUsuario@store');
+
+//Registros//
+Route::get('/registros','ControladorRegistro@index');
