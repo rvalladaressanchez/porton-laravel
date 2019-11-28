@@ -34,7 +34,6 @@ class ControladorRegistro extends Controller
         foreach (DB::select(DB::raw('select distinct date(fecha) as "count" from registros')) as $i) {
             array_push($dias, $i->count);
         }
-
         return View('registros/grafico')
         ->with('totalSemanal', $totalSemana)
         ->with('totalDia', $totalDia)

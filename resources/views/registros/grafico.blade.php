@@ -1,6 +1,6 @@
 @extends('layouts/layout') @section('contenido')
 <h1>{{$titulo}}</h1>
-
+<a class="btn btn-link" href="/registros">Volver</a>
 <canvas id="semanal" height="100"></canvas>
 <canvas id="diario" height="100"></canvas>
 <script>
