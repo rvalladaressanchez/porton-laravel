@@ -1,6 +1,12 @@
 @extends('layouts/layout') @section('contenido')
-<a class="btn btn-link" href="/index">Volver</a>
-<a class="btn btn-success" href="/registros/grafico">Grafico</a>
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+        <a class="nav-link" href="/index"><i class="fa fa-arrow-left"></i> Volver</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/registros/grafico"><i class="fa fa-chart-bar"></i>Ver grafico</a>
+    </li>
+</ul>
 <table class="table table-bordered">
     <thead>
         <tr>

@@ -1,6 +1,12 @@
 @extends('layouts/layout') @section('contenido')
-<a class="btn btn-link" href="/index">Volver</a>
-<a class="btn btn-primary" href="/usuarios/nuevo">Nuevo</a>
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+        <a class="nav-link" href="/index"><i class="fas fa-ad"></i> Volver</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/usuarios/nuevo"><i class="fas fa-user-plus"></i> Nuevo</a>
+    </li>
+</ul>
 <table class="table table-bordered">
     <thead>
         <tr>
@@ -18,7 +24,10 @@
             <td>{{$usuario->nombre}}</td>
             <td>{{$usuario->codigo}}</td>
             <td>{{$usuario->estado}}</td>
-        <td><a class="btn btn-primary btn-block" href='/usuarios/{{$usuario->id}}/edit'>Editar</a> <form action="/usuarios/{{$usuario->id}}/destroy" method="POST">@csrf<input class="btn btn-danger btn-block" type="submit" value="Borrar"/></form></td>
+            <td><a class="btn btn-primary btn-block" href='/usuarios/{{$usuario->id}}/edit'>Editar</a>
+                <form action="/usuarios/{{$usuario->id}}/destroy" method="POST">@csrf<input
+                        class="btn btn-danger btn-block" type="submit" value="Borrar" /></form>
+            </td>
         </tr>
         @endforeach
         @empty($lista)
