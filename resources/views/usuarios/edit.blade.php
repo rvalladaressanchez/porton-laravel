@@ -1,6 +1,5 @@
 @extends('layouts/layout')
 @section('contenido')
-<h2>{{$titulo}}</h2>
 <a class="btn btn-link" href="/usuarios">Volver</a>
 <form action="{{url('usuarios/'.$usuario->id.'/edit')}}" method="post">
     @csrf

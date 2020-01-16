@@ -1,6 +1,5 @@
 @extends('layouts/layout')
 @section('contenido')
-<h2>{{$titulo}}</h2>
 <form action="{{url('usuarios/store')}}" method="post">
     @csrf
     <table class="table table-hover">

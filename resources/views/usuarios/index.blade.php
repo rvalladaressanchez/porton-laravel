@@ -1,5 +1,4 @@
 @extends('layouts/layout') @section('contenido')
-<h3>Usuarios</h3>
 <a class="btn btn-link" href="/index">Volver</a>
 <a class="btn btn-primary" href="/usuarios/nuevo">Nuevo</a>
 <table class="table table-bordered">

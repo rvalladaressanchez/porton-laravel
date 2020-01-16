@@ -1,8 +1,4 @@
 @extends('layouts/layout') @section('contenido')
-<h1>{{$titulo}}</h1>
-<a class="btn btn-primary btn-block btn-lg" href="/usuarios">Usuarios</a>
-<a class="btn btn-primary btn-block btn-lg" href="/registros">Registros</a>
-<hr>
 <div class="card-deck">
     <div class="card" style="width: 18rem;">
         <div class="card-body text-center">
