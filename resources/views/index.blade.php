@@ -4,6 +4,13 @@
         <div class="card-body">
             <h5 class="card-title display-1">~{{$promedioDia}}</h5>
             <p class="card-text text-muted">Promedio diario</p>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+                        <span class="text-success font-weight-bold">+{{$registrosHoy}}</span> registros hoy
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="card-footer">
             <a href="#" class="btn btn-primary btn-block btn-lg">Go somewhere</a>
@@ -13,6 +20,19 @@
         <div class="card-body">
             <h5 class="card-title display-1">{{$totalRegistros}}</h5>
             <p class="card-text text-muted">Total registros</p>
+        </div>
+        <div class="card-footer">
+            <a href="#" class="btn btn-primary btn-block btn-lg">Go somewhere</a>
+        </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title display-4">Ultimos registros</h5>
+            <ul class="list-unstyled text-left">
+                @foreach ($ultimosRegistros as $registro)
+                <li>({{date_create($registro->fecha)->format('d-m-Y H:i')}}) {{$registro->nombre}}</li>
+                @endforeach
+            </ul>
         </div>
         <div class="card-footer">
             <a href="#" class="btn btn-primary btn-block btn-lg">Go somewhere</a>
