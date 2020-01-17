@@ -32,9 +32,9 @@ class Controller extends BaseController
         $promedioDia = number_format($totalRegistros/(int)(date_diff(date_create("2019-09-23 20:16:17"),now())->format("%a")),2);
         $registrosHoy = DB::table('registros')->whereDate('fecha',now())->count();
         $ultimosRegistros= DB::table('registros')->orderBy('id','DESC')->limit(5)->get();
-        $ranking = DB::table('registros')->select('codigo as usuario', DB::raw('COUNT(codigo) AS occurrences'))
+        $ranking = DB::table('registros')->select('codigo as usuario', DB::raw('COUNT(codigo) AS total'))
         ->groupBy('codigo')
-        ->orderBy('occurrences', 'DESC')
+        ->orderBy('total', 'DESC')
         ->limit(5)
         ->get();
         foreach($ranking as $usuario){
