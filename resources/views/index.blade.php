@@ -13,7 +13,7 @@
             </div>
         </div>
         <div class="card-footer">
-            <a href="/registros" class="btn btn-primary btn-block btn-lg">Ir a Registros</a>
+            <a href="/registros" class="btn btn-outline-primary btn-block btn-lg">Ir a Registros</a>
         </div>
     </div>
     <div class="card" style="width: 18rem;">
@@ -22,7 +22,7 @@
             <p class="card-text text-muted">Total registros</p>
         </div>
         <div class="card-footer">
-            <a href="/registros" class="btn btn-primary btn-block btn-lg">Ir a Registros</a>
+            <a href="/registros" class="btn btn-outline-primary btn-block btn-lg">Ir a Registros</a>
         </div>
     </div>
     <div class="card" style="width: 18rem;">
@@ -35,7 +35,7 @@
             </ul>
         </div>
         <div class="card-footer">
-            <a href="/registros" class="btn btn-primary btn-block btn-lg">Ir a Registros</a>
+            <a href="/registros" class="btn btn-outline-primary btn-block btn-lg">Ir a Registros</a>
         </div>
     </div>
     <div class="card" style="width: 18rem;">
@@ -50,7 +50,7 @@
             </ul>
         </div>
         <div class="card-footer">
-            <a href="/usuarios" class="btn btn-primary btn-block btn-lg">Ir a Usuarios</a>
+            <a href="/usuarios" class="btn btn-outline-primary btn-block btn-lg">Ir a Usuarios</a>
         </div>
     </div>
 </div>
