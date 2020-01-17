@@ -2,7 +2,7 @@
 <div class="card-deck">
     <div class="card" style="width: 18rem;">
         <div class="card-body text-center">
-            <h5 class="card-title display-1">~10</h5>
+            <h5 class="card-title display-1">~{{$promedioDia}}</h5>
             <p class="card-text">Promedio diario</p>
         </div>
         <div class="card-footer">
@@ -11,7 +11,7 @@
     </div>
     <div class="card" style="width: 18rem;">
         <div class="card-body text-center">
-            <h5 class="card-title display-1">1481</h5>
+            <h5 class="card-title display-1">{{$totalRegistros}}</h5>
             <p class="card-text">Total registros</p>
         </div>
         <div class="card-footer">
