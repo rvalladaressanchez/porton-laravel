@@ -24,7 +24,17 @@
             <td><a href="/registros/{{$registro->id}}">{{$registro->id}}</a></td>
             <td>{{$registro->codigo}}</td>
             <td>{{$registro->nombre}}</td>
-            <td>{{$registro->tipo}}</td>
+            @switch($registro->tipo)
+                @case("acceso-permitido")
+                <td class="text-success font-weight-bold">{{$registro->tipo}}</td>
+                @break
+                @case("no-registrado")
+                <td class="text-warning font-weight-bold">{{$registro->tipo}}</td>
+                @break
+                @case("acceso-denegado")
+                <td class="text-danger font-weight-bold">{{$registro->tipo}}</td>
+                @break
+            @endswitch
             <td>{{$registro->comentario}}</td>
             <td>{{$registro->fecha}}</td>
         </tr>
