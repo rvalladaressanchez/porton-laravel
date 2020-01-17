@@ -28,6 +28,7 @@
     </table>
 </form>
 <hr>
+Cantidad registros: {{count($lista)}}
 <table class="table table-bordered">
     <thead>
         <tr>
