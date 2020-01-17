@@ -30,9 +30,18 @@ class Controller extends BaseController
     {
         $totalRegistros = DB::table('registros')->count();
         $promedioDia = number_format($totalRegistros/(int)(date_diff(date_create("2019-09-23 20:16:17"),now())->format("%a")),2);
+        $ranking = DB::table('registros')->select('codigo as usuario', DB::raw('COUNT(codigo) AS occurrences'))
+        ->groupBy('codigo')
+        ->orderBy('occurrences', 'DESC')
+        ->limit(5)
+        ->get();
+        foreach($ranking as $usuario){
+            $usuario->usuario = DB::table('usuarios')->where('codigo',"=",$usuario->usuario)->first()->nombre;
+        }
         return View('index')
             ->with('titulo', 'Index')
             ->with('totalRegistros', $totalRegistros)
-            ->with('promedioDia', $promedioDia);
+            ->with('promedioDia', $promedioDia)
+            ->with('ranking',$ranking);
     }
 }
