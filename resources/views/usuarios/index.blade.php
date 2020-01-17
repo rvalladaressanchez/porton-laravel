@@ -24,9 +24,20 @@
             <td>{{$usuario->nombre}}</td>
             <td>{{$usuario->codigo}}</td>
             <td>{{$usuario->estado}}</td>
-            <td><a class="btn btn-primary btn-block" href='/usuarios/{{$usuario->id}}/edit'>Editar</a>
-                <form action="/usuarios/{{$usuario->id}}/destroy" method="POST">@csrf<input
-                        class="btn btn-danger btn-block" type="submit" value="Borrar" /></form>
+            <td>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm">
+                            <a class="btn btn-primary btn-block" href='/usuarios/{{$usuario->id}}/edit'>Editar</a>
+                        </div>
+                        <div class="col-sm">
+                            <form action="/usuarios/{{$usuario->id}}/destroy" method="POST">
+                                @csrf
+                                <input class="btn btn-danger btn-block" type="submit" value="Borrar" />
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </td>
         </tr>
         @endforeach
