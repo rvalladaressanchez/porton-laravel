@@ -4,13 +4,6 @@
         <div class="card-body">
             <h5 class="card-title display-1">~{{$promedioDia}}</h5>
             <p class="card-text text-muted">Promedio diario</p>
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm">
-                        <span class="text-success font-weight-bold">+{{$registrosHoy}}</span> registros hoy
-                    </div>
-                </div>
-            </div>
         </div>
         <div class="card-footer">
             <a href="/registros" class="btn btn-outline-primary btn-block btn-lg">Ir a Registros</a>
@@ -20,6 +13,13 @@
         <div class="card-body">
             <h5 class="card-title display-1">{{$totalRegistros}}</h5>
             <p class="card-text text-muted">Total registros</p>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+                        <span class="text-success font-weight-bold">+{{$registrosHoy}}</span> registros hoy
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="card-footer">
             <a href="/registros" class="btn btn-outline-primary btn-block btn-lg">Ir a Registros</a>
