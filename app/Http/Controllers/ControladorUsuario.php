@@ -16,7 +16,7 @@ class ControladorUsuario extends Controller
     public function index()
     {
         return View('usuarios/index')
-        ->with('titulo', 'Index')
+        ->with('titulo', 'Usuarios')
         ->with('lista', DB::table('usuarios')->get());
     }
 
