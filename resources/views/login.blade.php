@@ -112,13 +112,12 @@
             <h1 class="h3 mb-3 display-4">RvS</h1>
         </div>
         <div class="form-label-group">
-            <input type="text" id="txtUsuario" name="txtUsuario" class="form-control" placeholder="Login" required
-                autofocus>
+            <input type="text" id="txtUsuario" name="txtUsuario" class="form-control form-control-lg" placeholder="Login" required autofocus/>
             <label for="txtUsuario">Login</label>
         </div>
         <div class="form-label-group">
-            <input type="password" id="txtPass" name="txtPass" class="form-control" placeholder="Password" required>
-            <label for="inputPassword">Password</label>
+            <input type="password" id="txtPass" name="txtPass" class="form-control form-control-lg" placeholder="Password" required/>
+            <label for="txtPass">Password</label>
         </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Iniciar sesion</button>
         <p class="mt-5 mb-3 text-muted text-center">&copy; 2019-2020</p>
