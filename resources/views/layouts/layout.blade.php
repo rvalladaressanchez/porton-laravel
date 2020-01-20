@@ -30,7 +30,7 @@
             <ul class="nav navbar-nav ml-auto">
                 <form action="{{url('logout')}}" method="POST" class="navbar-right form-inline my-2 my-lg-0">
                     @csrf
-                    <li><button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Cerrar sesion</button></li>
+                    <li><button class="btn btn-outline-danger my-2 my-sm-0" type="submit"><i class="fas fa-sign-out-alt"></i> Cerrar sesion</button></li>
                 </form>
             </ul>
         </div>

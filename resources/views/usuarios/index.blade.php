@@ -23,17 +23,21 @@
             <td>{{$usuario->id}}</td>
             <td>{{$usuario->nombre}}</td>
             <td>{{$usuario->codigo}}</td>
-            <td>{{$usuario->estado}}</td>
+            @if($usuario->estado==1)
+            <td><i class="fas fa-check"></i></td>
+            @else
+            <td><i class="fas fa-ban"></i></td>
+            @endif
             <td>
                 <div class="container">
                     <div class="row">
                         <div class="col-sm">
-                            <a class="btn btn-primary btn-block" href='/usuarios/{{$usuario->id}}/edit'>Editar</a>
+                            <a class="btn btn-primary btn-block" href='/usuarios/{{$usuario->id}}/edit'><i class="fas fa-user-edit"></i> Editar</a>
                         </div>
                         <div class="col-sm">
                             <form action="/usuarios/{{$usuario->id}}/destroy" method="POST">
                                 @csrf
-                                <input class="btn btn-danger btn-block" type="submit" value="Borrar" />
+                                <button class="btn btn-danger btn-block" type="submit"><i class="fas fa-user-minus"></i> Borrar</button>
                             </form>
                         </div>
                     </div>
