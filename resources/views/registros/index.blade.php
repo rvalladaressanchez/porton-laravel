@@ -1,10 +1,10 @@
 @extends('layouts/layout') @section('contenido')
 <ul class="nav nav-tabs">
     <li class="nav-item">
-        <a class="nav-link" href="/index"><i class="fa fa-arrow-left"></i> Volver</a>
+        <a class="nav-link" href="/index"><i class="fas fa-arrow-left"></i> Volver</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="/registros/grafico"><i class="fa fa-chart-bar"></i>Ver grafico</a>
+        <a class="nav-link" href="/registros/grafico"><i class="fas fa-chart-bar"></i> Ver grafico</a>
     </li>
 </ul>
 <table class="table table-bordered">

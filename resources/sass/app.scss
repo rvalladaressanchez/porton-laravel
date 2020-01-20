@@ -1,5 +1,8 @@
 //
-@import "node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/brands';
 #contenido{
     margin-left: 1.5em;
     margin-right: 1.5em;

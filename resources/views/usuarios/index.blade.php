@@ -1,7 +1,7 @@
 @extends('layouts/layout') @section('contenido')
 <ul class="nav nav-tabs">
     <li class="nav-item">
-        <a class="nav-link" href="/index"><i class="fas fa-ad"></i> Volver</a>
+        <a class="nav-link" href="/index"><i class="fas fa-arrow-left"></i> Volver</a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="/usuarios/nuevo"><i class="fas fa-user-plus"></i> Nuevo</a>
