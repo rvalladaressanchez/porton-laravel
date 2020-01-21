@@ -29,7 +29,7 @@
 </form>
 <hr>
 Cantidad registros: {{count($lista)}}
-<table class="table table-bordered">
+<table class="table table-bordered sortable">
     <thead>
         <tr>
             <th>Id</th>
@@ -37,7 +37,7 @@ Cantidad registros: {{count($lista)}}
             <th>Nombre</th>
             <th>Tipo</th>
             <th>Comentario</th>
-            <th>fecha</th>
+            <th>Fecha</th>
         </tr>
     </thead>
     <tbody>

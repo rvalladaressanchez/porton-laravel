@@ -7,7 +7,7 @@
         <a class="nav-link" href="/usuarios/nuevo"><i class="fas fa-user-plus"></i> Nuevo</a>
     </li>
 </ul>
-<table class="table table-bordered">
+<table class="table table-bordered sortable">
     <thead>
         <tr>
             <th>Id</th>
