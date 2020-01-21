@@ -5,11 +5,11 @@
     <table class="table table-hover">
         <tr>
             <th>Nombre</th>
-            <td><input name="txtNombre" type="text" class="form-control"/></td>
+            <td><input name="txtNombre" type="text" class="form-control" required/></td>
         </tr>
         <tr>
             <th>Codigo</th>
-            <td><input name="txtCodigo" maxlength="5" type="text" value="{{$codigo}}"class="form-control"/></td>
+            <td><input name="txtCodigo" maxlength="5" type="text" value="{{$codigo}}" class="form-control" required/></td>
         </tr>
         <tr>
             <th>Activo</th>
