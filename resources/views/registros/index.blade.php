@@ -7,7 +7,7 @@
         <a class="nav-link" href="/registros/grafico"><i class="fas fa-chart-bar"></i> Ver grafico</a>
     </li>
 </ul>
-<table class="table table-bordered">
+<table class="sortable table table-bordered">
     <thead>
         <tr>
             <th>Id</th>
@@ -25,15 +25,15 @@
             <td>{{$registro->codigo}}</td>
             <td>{{$registro->nombre}}</td>
             @switch($registro->tipo)
-                @case("acceso-permitido")
-                <td class="text-success font-weight-bold">{{$registro->tipo}}</td>
-                @break
-                @case("no-registrado")
-                <td class="text-warning font-weight-bold">{{$registro->tipo}}</td>
-                @break
-                @case("acceso-denegado")
-                <td class="text-danger font-weight-bold">{{$registro->tipo}}</td>
-                @break
+            @case("acceso-permitido")
+            <td class="text-success font-weight-bold">{{$registro->tipo}}</td>
+            @break
+            @case("no-registrado")
+            <td class="text-warning font-weight-bold">{{$registro->tipo}}</td>
+            @break
+            @case("acceso-denegado")
+            <td class="text-danger font-weight-bold">{{$registro->tipo}}</td>
+            @break
             @endswitch
             <td>{{$registro->comentario}}</td>
             <td>{{$registro->fecha}}</td>
@@ -46,4 +46,5 @@
         @endempty
     </tbody>
 </table>
+
 @endsection
