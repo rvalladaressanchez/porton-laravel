@@ -19,18 +19,30 @@ class ControladorUsuario extends Controller
         ->with('titulo', 'Usuarios')
         ->with('lista', DB::table('usuarios')->get());
     }
-
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
+    private function codigoExiste($codigo){
+        if(DB::table('usuarios')->where('codigo','=',$codigo)->get()->count()==0)
+            return false;
+        else
+            return true;
+    }
+    private function generarCodigo($largo){
+        return substr(md5(time()), 0, $largo);
+    }
     public function create()
     {
+        $codigo="";
+        do {
+            $codigo=self::generarCodigo(5);
+        } while (self::codigoExiste($codigo));
         return View('usuarios/new')
+        ->with('codigo',$codigo)
         ->with('titulo', 'Nuevo');
     }
-
     /**
      * Store a newly created resource in storage.
      *
