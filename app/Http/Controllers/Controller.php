@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\DB;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
-    public function login()
+    /*public function login()
     {
         $login = $_POST['txtUsuario'];
         $password = $_POST['txtPass'];
@@ -25,7 +25,7 @@ class Controller extends BaseController
     {
         session()->put('usuario', null);
         return redirect('/login');
-    }
+    }*/
     public function index()
     {
         $totalRegistros = DB::table('registros')->count();

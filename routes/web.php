@@ -12,14 +12,14 @@
 */
 
 Route::get('/', function () {
-    return redirect('/login');
+    return redirect('/index');
 });
-Route::get('/login', function () {
+/*Route::get('/login', function () {
     return view('login');
 });
-Route::post('/login', "Controller@login");
+Route::post('/login', "Controller@login");*/
 Route::get('/index', "Controller@index");
-Route::post('/logout', "Controller@logout");
+//Route::post('/logout', "Controller@logout");
 
 //Usuario//
 Route::get('/usuarios','ControladorUsuario@index');
@@ -33,3 +33,7 @@ Route::post('/usuarios/store','ControladorUsuario@store');
 Route::get('/registros','ControladorRegistro@index');
 Route::get('/registros/{id}','ControladorRegistro@show')->where('id', '[0-9]+');
 Route::get('/registros/grafico','ControladorRegistro@grafico');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
