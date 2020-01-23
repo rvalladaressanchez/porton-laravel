@@ -29,6 +29,7 @@ Route::get('/registros','ControladorRegistro@index');
 Route::get('/registros/{id}','ControladorRegistro@show')->where('id', '[0-9]+');
 Route::get('/registros/grafico','ControladorRegistro@grafico');
 
-Auth::routes();
+//Auth::routes();
+Auth::routes(['register' => false]);
 
 Route::get('/home', 'HomeController@index')->name('home');
