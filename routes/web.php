@@ -12,14 +12,9 @@
 */
 
 Route::get('/', function () {
-    return redirect('/index');
+    return redirect('/login');
 });
-/*Route::get('/login', function () {
-    return view('login');
-});
-Route::post('/login', "Controller@login");*/
 Route::get('/index', "Controller@index");
-//Route::post('/logout', "Controller@logout");
 
 //Usuario//
 Route::get('/usuarios','ControladorUsuario@index');
