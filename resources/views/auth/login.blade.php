@@ -100,24 +100,28 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
-    
     <title>Document</title>
 </head>
 
 <body>
-    <form class="form-signin" action="/login" method="POST">
+    <form class="form-signin" action="{{ route('login') }}" method="POST">
         @csrf
         <div class="text-center mb-4">
             <img class="mb-4" src="/rvs.png" alt="" width="150" height="150">
             <h1 class="h3 mb-3 display-4">RvS</h1>
         </div>
         <div class="form-label-group">
-            <input type="text" id="txtUsuario" name="txtUsuario" class="form-control form-control-lg" placeholder="Login" required autofocus/>
-            <label for="txtUsuario">Login</label>
+            <input type="email" id="email" name="email"
+                class="form-control form-control-lg @error('email') is-invalid @enderror" placeholder="Login" required
+                autofocus />
+            <label for="email">Correo electronico</label>
+            @error('email')<strong>{{ $message }}</strong>@enderror
         </div>
         <div class="form-label-group">
-            <input type="password" id="txtPass" name="txtPass" class="form-control form-control-lg" placeholder="Password" required/>
-            <label for="txtPass">Password</label>
+            <input type="password" id="password" name="password"
+                class="form-control form-control-lg @error('email') is-invalid @enderror" placeholder="Password"
+                required />
+            <label for="password">Clave</label>
         </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Iniciar sesion</button>
         <p class="mt-5 mb-3 text-muted text-center">&copy; 2019-2020</p>
