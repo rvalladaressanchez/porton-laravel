@@ -11,14 +11,14 @@ class ControladorRegistro extends Controller
     public function index()
     {
         return View('registros/index')
-        ->with('titulo', 'Registros')
-        ->with('lista', DB::table('registros')->orderBy('id', 'desc')->get());
+            ->with('titulo', 'Registros')
+            ->with('lista', DB::table('registros')->orderBy('id', 'desc')->get());
     }
     public function show($idRegistro)
     {
         return View('registros/show')
-        ->with('titulo', 'Registro')
-        ->with('registro', DB::table('registros')->where('id', '=', $idRegistro)->first());
+            ->with('titulo', 'Registro')
+            ->with('registro', DB::table('registros')->where('id', '=', $idRegistro)->first());
     }
     public function grafico()
     {
@@ -35,9 +35,35 @@ class ControladorRegistro extends Controller
             array_push($dias, $i->count);
         }
         return View('registros/grafico')
-        ->with('totalSemanal', $totalSemana)
-        ->with('totalDia', $totalDia)
-        ->with('dias',$dias)
-        ->with('titulo', 'Grafico');
+            ->with('totalSemanal', $totalSemana)
+            ->with('totalDia', $totalDia)
+            ->with('dias', $dias)
+            ->with('titulo', 'Grafico');
+    }
+
+    //funciones
+    public static function getRegistros()
+    {
+        return DB::table('registros')->get();
+    }
+    public static function getRegistrosFecha($fecha)
+    {
+        return DB::table('registros')->whereDate('fecha', $fecha)->get();
+    }
+    public static function getUltimosRegistros($numero)
+    {
+        return DB::table('registros')->orderBy('id', 'DESC')->limit($numero)->get();
+    }
+    public static function getRankingUsuarios($numero)
+    {
+        $ranking = DB::table('registros')->select('codigo as usuario', DB::raw('COUNT(codigo) AS total'))
+            ->groupBy('codigo')
+            ->orderBy('total', 'DESC')
+            ->limit($numero)
+            ->get();
+        foreach ($ranking as $usuario) {
+            $usuario->usuario = ControladorUsuario::getUsuarioCodigo($usuario->usuario)->nombre;
+        }
+        return $ranking;
     }
 }
