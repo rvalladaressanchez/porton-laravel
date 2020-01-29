@@ -66,4 +66,11 @@ class ControladorRegistro extends Controller
         }
         return $ranking;
     }
+    public static function getRegistrosGraficoHora()
+    {
+        $query = "SELECT hour( fecha ) as 'hora', count(*) as 'count'
+        FROM registros
+        group by hour( fecha )";
+        dd(DB::select(DB::raw($query)));
+    }
 }
