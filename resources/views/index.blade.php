@@ -54,8 +54,10 @@
         </div>
     </div>
 </div>
-<hr>
-<canvas id="grafico" height="50"></canvas>
+<br>
+<div class="border rounded">
+    <canvas id="grafico" height="50"></canvas>
+</div>
 <script>
     var ctx = document.getElementById('grafico').getContext('2d');
     var myChart = new Chart(ctx, {
