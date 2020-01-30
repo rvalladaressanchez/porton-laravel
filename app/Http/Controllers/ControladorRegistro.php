@@ -68,9 +68,13 @@ class ControladorRegistro extends Controller
     }
     public static function getRegistrosGraficoHora()
     {
-        $query = "SELECT hour( fecha ) as 'hora', count(*) as 'count'
+        $query = "select count(*) as 'count'
         FROM registros
         group by hour( fecha )";
-        dd(DB::select(DB::raw($query)));
+        $valores = array();
+        foreach(DB::select(DB::raw($query)) as $valor){
+            array_push($valores, $valor->count);
+        }
+        return $valores;
     }
 }

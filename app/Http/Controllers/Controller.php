@@ -19,12 +19,14 @@ class Controller extends BaseController
         $registrosHoy = ControladorRegistro::getRegistrosFecha(now())->count();
         $ultimosRegistros= ControladorRegistro::getUltimosRegistros(5);
         $ranking = ControladorRegistro::getRankingUsuarios(5);
+        $valoresGrafico = ControladorRegistro::getRegistrosGraficoHora();
         return View('index')
             ->with('titulo', 'Index')
             ->with('ultimosRegistros',$ultimosRegistros)
             ->with('registrosHoy',$registrosHoy)
             ->with('totalRegistros', $totalRegistros)
             ->with('promedioDia', $promedioDia)
-            ->with('ranking',$ranking);
+            ->with('ranking',$ranking)
+            ->with('valoresGrafico',$valoresGrafico);
     }
 }
