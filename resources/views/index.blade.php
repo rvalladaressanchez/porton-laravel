@@ -54,4 +54,67 @@
         </div>
     </div>
 </div>
+<br>
+<div class="border rounded">
+    <canvas id="grafico" height="50"></canvas>
+</div>
+<script>
+    var ctx = document.getElementById('grafico').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: [
+                '00:00',
+                '01:00',
+                '02:00',
+                '03:00',
+                '04:00',
+                '05:00',
+                '06:00',
+                '07:00',
+                '08:00',
+                '09:00',
+                '10:00',
+                '11:00',
+                '12:00',
+                '13:00',
+                '14:00',
+                '15:00',
+                '16:00',
+                '17:00',
+                '18:00',
+                '19:00',
+                '20:00',
+                '21:00',
+                '22:00',
+                '23:00'
+            ],
+            datasets: [{
+                label: 'Registros',
+                backgroundColor: 'rgba(0, 123, 255, 0.1)',
+                borderColor: 'rgba(0, 123, 255, 1)',
+                data: {{json_encode($valoresGrafico)}},
+                borderWidth: 1,
+                pointHitRadius: 30
+            }]
+        },
+        options: {
+            legend:{
+                display:false
+            },
+            title:{
+                display: true,
+                fontSize: 25,
+                text: 'Registros / Hora'
+            },
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+</script>
 @endsection

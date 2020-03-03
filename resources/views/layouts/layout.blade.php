@@ -1,3 +1,4 @@
+@auth
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,14 +25,16 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link" href="/index">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="/index">Index <span class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link" href="/usuarios">Usuarios</a>
                 <a class="nav-item nav-link" href="/registros">Registros</a>
             </div>
             <ul class="nav navbar-nav ml-auto">
-                <form action="{{url('logout')}}" method="POST" class="navbar-right form-inline my-2 my-lg-0">
+                <span class="navbar-brand">{{Auth::user()->name}} ({{Auth::user()->email}})</span>
+                <form action="{{ route('logout') }}" method="POST" class="navbar-right form-inline my-2 my-lg-0">
                     @csrf
-                    <li><button class="btn btn-outline-danger my-2 my-sm-0" type="submit"><i class="fas fa-sign-out-alt"></i> Cerrar sesion</button></li>
+                    <li><button class="btn btn-outline-danger my-2 my-sm-0" type="submit"><i
+                                class="fas fa-sign-out-alt"></i> Cerrar sesion</button></li>
                 </form>
             </ul>
         </div>
@@ -53,3 +56,8 @@
 </body>
 
 </html>
+@else
+<script>
+    window.location.replace("/login");
+</script>
+@endauth

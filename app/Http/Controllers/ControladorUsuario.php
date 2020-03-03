@@ -16,32 +16,34 @@ class ControladorUsuario extends Controller
     public function index()
     {
         return View('usuarios/index')
-        ->with('titulo', 'Usuarios')
-        ->with('lista', DB::table('usuarios')->get());
+            ->with('titulo', 'Usuarios')
+            ->with('lista', DB::table('usuarios')->get());
     }
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    private function codigoExiste($codigo){
-        if(DB::table('usuarios')->where('codigo','=',$codigo)->get()->count()==0)
+    private function codigoExiste($codigo)
+    {
+        if (DB::table('usuarios')->where('codigo', '=', $codigo)->get()->count() == 0)
             return false;
         else
             return true;
     }
-    private function generarCodigo($largo){
+    private function generarCodigo($largo)
+    {
         return substr(md5(time()), 0, $largo);
     }
     public function create()
     {
-        $codigo="";
+        $codigo = "";
         do {
-            $codigo=self::generarCodigo(5);
+            $codigo = self::generarCodigo(5);
         } while (self::codigoExiste($codigo));
         return View('usuarios/new')
-        ->with('codigo',$codigo)
-        ->with('titulo', 'Nuevo');
+            ->with('codigo', $codigo)
+            ->with('titulo', 'Nuevo');
     }
     /**
      * Store a newly created resource in storage.
@@ -57,9 +59,9 @@ class ControladorUsuario extends Controller
             $estado = 0;
         }
         DB::table('usuarios')->insert([
-            'nombre'=>$_POST['txtNombre'],
-            'codigo'=>$_POST['txtCodigo'],
-            'estado'=>$estado
+            'nombre' => $_POST['txtNombre'],
+            'codigo' => $_POST['txtCodigo'],
+            'estado' => $estado
         ]);
         return redirect('/usuarios');
     }
@@ -84,9 +86,9 @@ class ControladorUsuario extends Controller
     public function edit($id)
     {
         return View('usuarios/edit')
-        ->with('titulo', 'Editar')
-        ->with('usuario', $this->show($id))
-        ->with('lista', DB::table('registros')->where('nombre', '=', $this->show($id)->nombre)->orderby('id','desc')->get());
+            ->with('titulo', 'Editar')
+            ->with('usuario', $this->show($id))
+            ->with('lista', DB::table('registros')->where('nombre', '=', $this->show($id)->nombre)->orderby('id', 'desc')->get());
     }
 
     /**
@@ -104,9 +106,9 @@ class ControladorUsuario extends Controller
             $estado = 0;
         }
         DB::table('usuarios')->where('id', '=', $id)->update([
-            'nombre'=>$_POST['txtNombre'],
-            'codigo'=>$_POST['txtCodigo'],
-            'estado'=>$estado
+            'nombre' => $_POST['txtNombre'],
+            'codigo' => $_POST['txtCodigo'],
+            'estado' => $estado
         ]);
         return redirect()->back();
     }
@@ -121,5 +123,11 @@ class ControladorUsuario extends Controller
     {
         DB::table('usuarios')->where('id', '=', $id)->delete();
         return redirect('/usuarios');
+    }
+
+    //funciones
+    public static function getUsuarioCodigo($codigo)
+    {
+        return DB::table('usuarios')->where('codigo', "=", $codigo)->first();
     }
 }
